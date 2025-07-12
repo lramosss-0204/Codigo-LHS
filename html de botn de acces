@@ -1,0 +1,42 @@
+    <div id="accessibility-button" aria-label="Menú de accesibilidad" role="button" tabindex="0">♿</div>
+
+    <!-- Menú de Accesibilidad -->
+    <div id="accessibility-menu" class="hidden" aria-label="Opciones de accesibilidad">
+        <h3>Opciones de accesibilidad</h3>
+        <button onclick="toggleTextCenter()">📝 Centrar texto</button>
+        <button onclick="increaseFontSize()">🔠 Aumentar tamaño de texto</button>
+        <button onclick="toggleHighContrast()">🌑 Alto contraste</button>
+        <button onclick="toggleColorBlindMode()">🎨 Modo daltónico</button>
+        <button onclick="toggleDyslexiaFont()">🧠 Fuente disléxica</button>
+        <button onclick="readContent()">🔊 Leer contenido</button>
+    </div>
+
+    <header>
+        <h1>Bienvenido a Mi Página Web</h1>
+    </header>
+    <!-- Menú de Accesibilidad -->
+<div id="accessibility-menu" class="hidden" aria-label="Opciones de accesibilidad">
+    <h3>Opciones de accesibilidad</h3>
+
+    <button onclick="toggleTextCenter()">📝 Centrar texto 
+        <span class="level-indicator" id="textCenterLevel">Normal</span>
+    </button>
+
+    <button onclick="increaseFontSize()">🔠 Tamaño texto 
+        <span class="level-indicator" id="fontSizeLevel">Normal</span>
+    </button>
+
+    <button onclick="toggleHighContrast()">🌑 Contraste 
+        <span class="level-indicator" id="contrastLevel">Normal</span>
+    </button>
+
+    <button onclick="toggleColorBlindMode()">🎨 Daltónico 
+        <span class="level-indicator" id="colorBlindLevel">Normal</span>
+    </button>
+
+    <button onclick="toggleDyslexiaFont()">🧠 Dislexia 
+        <span class="level-indicator" id="dyslexiaLevel">Normal</span>
+    </button>
+
+    <button onclick="readContent()">🔊 Leer contenido</button>
+</div>
