@@ -1,0 +1,74 @@
+const btn = document.getElementById("accessibility-button");
+const menu = document.getElementById("accessibility-menu");
+const body = document.body;
+const mainContent = document.getElementById("main-content");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+});
+
+let levels = {
+    fontSize: 0,
+    contrast: 0,
+    colorBlind: 0,
+    dyslexia: 0,
+    textCenter: 0
+};
+
+// Referencias a los elementos de nivel
+const levelDisplays = {
+    fontSize: document.getElementById("fontSizeLevel"),
+    contrast: document.getElementById("contrastLevel"),
+    colorBlind: document.getElementById("colorBlindLevel"),
+    dyslexia: document.getElementById("dyslexiaLevel"),
+    textCenter: document.getElementById("textCenterLevel")
+};
+
+function updateLevelDisplay(key) {
+    const level = levels[key];
+    levelDisplays[key].textContent = level === 0 ? "Normal" : `Nivel ${level}`;
+}
+
+function cycleClass(baseClass, stateKey) {
+    levels[stateKey] = (levels[stateKey] + 1) % 4;
+    
+    // Limpia niveles anteriores
+    for (let i = 1; i <= 3; i++) {
+        body.classList.remove(`${baseClass}-${i}`);
+    }
+
+    if (levels[stateKey] !== 0) {
+        body.classList.add(`${baseClass}-${levels[stateKey]}`);
+    }
+
+    updateLevelDisplay(stateKey);
+}
+
+// Funciones individuales
+function toggleTextCenter() {
+    cycleClass("center-text", "textCenter");
+}
+
+function increaseFontSize() {
+    cycleClass("font-size", "fontSize");
+}
+
+function toggleHighContrast() {
+    cycleClass("contrast", "contrast");
+}
+
+function toggleColorBlindMode() {
+    cycleClass("color-blind", "colorBlind");
+}
+
+function toggleDyslexiaFont() {
+    cycleClass("dyslexia", "dyslexia");
+}
+
+function readContent() {
+    const text = mainContent.innerText;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = 'es-ES';
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+}
