@@ -1,0 +1,71 @@
+/* ================================
+   🟦 BOTÓN Y MENÚ DE ACCESIBILIDAD
+================================== */
+
+/* Botón de accesibilidad flotante */
+#accessibility-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #00529B;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Menú emergente */
+#accessibility-menu {
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    background: white;
+    border: 2px solid #ccc;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    width: 220px;
+}
+
+/* Ocultar el menú cuando esté inactivo */
+#accessibility-menu.hidden {
+    display: none;
+}
+
+#accessibility-menu h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+/* Estilo formal de botones dentro del menú */
+#accessibility-menu button {
+    background-color: white;
+    color: #0078D7;
+    border: 2px solid #0078D7;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#accessibility-menu button:hover {
+    background-color: #e6f0fa;
+}
+
+/* Indicador visual del nivel actual */
+.level-indicator {
+    font-size: 12px;
+    color: #005a9e;
+    font-weight: normal;
+}
