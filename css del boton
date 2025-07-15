@@ -1,8 +1,19 @@
-/* ================================
-   🟦 BOTÓN Y MENÚ DE ACCESIBILIDAD
-================================== */
+/* Fuente disléxica opcional (debes alojarla o enlazarla con Google Fonts si quieres una real como OpenDyslexic) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-/* Botón de accesibilidad flotante */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease;
+}
+
+header, nav, main, footer {
+    transition: all 0.3s ease;
+}
+
+/* Botón de accesibilidad */
 #accessibility-button {
     position: fixed;
     top: 10px;
@@ -17,7 +28,7 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Menú emergente */
+/* Menú de accesibilidad */
 #accessibility-menu {
     position: fixed;
     top: 60px;
@@ -31,7 +42,6 @@
     width: 220px;
 }
 
-/* Ocultar el menú cuando esté inactivo */
 #accessibility-menu.hidden {
     display: none;
 }
@@ -41,7 +51,111 @@
     font-size: 16px;
 }
 
-/* Estilo formal de botones dentro del menú */
+#accessibility-menu button {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#accessibility-menu button:hover {
+    background-color: #005a9e;
+}
+
+/* Modo centrado */
+.center-text * {
+    text-align: center !important;
+}
+
+/* Modo alto contraste */
+.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+}
+
+.high-contrast a {
+    color: cyan !important;
+}
+
+/* Modo daltónico (contraste adaptado con colores accesibles) */
+.color-blind {
+    background-color: #fdf6e3 !important;
+    color: #073642 !important;
+}
+
+.color-blind a {
+    color: #268bd2 !important;
+}
+
+/* Fuente disléxica (simulada con serif) */
+.dyslexia-font {
+    font-family: 'Arial', 'Verdana', sans-serif !important;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+}
+/* Tamaño de fuente progresivo */
+.font-size-1 { font-size: 110%; }
+.font-size-2 { font-size: 125%; }
+.font-size-3 { font-size: 150%; }
+
+/* Contraste progresivo */
+.contrast-1 {
+    background-color: #333 !important;
+    color: #eee !important;
+}
+
+.contrast-2 {
+    background-color: #000 !important;
+    color: #ff0 !important;
+}
+
+.contrast-3 {
+    background-color: #000 !important;
+    color: #0f0 !important;
+}
+
+/* Daltonismo progresivo (usamos paletas accesibles diferentes) */
+.color-blind-1 {
+    background-color: #fdf6e3 !important;
+    color: #073642 !important;
+}
+.color-blind-2 {
+    background-color: #e0f7fa !important;
+    color: #006064 !important;
+}
+.color-blind-3 {
+    background-color: #fff3e0 !important;
+    color: #bf360c !important;
+}
+
+/* Fuente disléxica progresiva */
+.dyslexia-1 {
+    font-family: 'Arial', sans-serif !important;
+    letter-spacing: 0.03em;
+}
+
+.dyslexia-2 {
+    font-family: 'Verdana', sans-serif !important;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+}
+
+.dyslexia-3 {
+    font-family: 'Courier New', monospace !important;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+}
+
+/* Centrado progresivo */
+.center-text-1 * { text-align: center; }
+.center-text-2 * { text-align: center; font-style: italic; }
+.center-text-3 * { text-align: center; font-style: italic; font-weight: bold; }
+/* === Botones formales === */
 #accessibility-menu button {
     background-color: white;
     color: #0078D7;
@@ -63,7 +177,7 @@
     background-color: #e6f0fa;
 }
 
-/* Indicador visual del nivel actual */
+/* Indicadores de nivel */
 .level-indicator {
     font-size: 12px;
     color: #005a9e;
